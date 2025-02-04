@@ -5,8 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio - David Hdez Lemus</title>
+  <!-- Cargar Tailwind CSS desde CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Cargar Devicon para los íconos de tecnologías -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   <style>
+    /* Animación personalizada para el header */
     @keyframes fadeInDown {
       from {
         opacity: 0;
@@ -26,8 +30,44 @@
 </head>
 
 <body class="bg-gray-900 text-white">
-  <!-- HEADER -->
-  <header class="relative bg-cover bg-center" style="background-image: url('./src/images/header-bg.jpg');">
+  <!-- NAVBAR FIJO -->
+  <nav class="bg-gray-800 fixed top-0 w-full z-50">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-between items-center py-4">
+        <!-- Marca / Logo -->
+        <a href="#home" class="text-white text-xl font-bold">Portfolio</a>
+        <!-- Menú escritorio -->
+        <div class="hidden md:flex space-x-6">
+          <a href="#home" class="text-gray-300 hover:text-white">Home</a>
+          <a href="#projects" class="text-gray-300 hover:text-white">Proyectos</a>
+          <a href="#about" class="text-gray-300 hover:text-white">Acerca de</a>
+          <a href="#contact" class="text-gray-300 hover:text-white">Contacto</a>
+        </div>
+        <!-- Botón menú móvil -->
+        <div class="md:hidden">
+          <button id="navbar-toggle" class="text-gray-300 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Menú móvil -->
+      <div id="navbar-menu" class="hidden md:hidden">
+        <a href="#home" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Home</a>
+        <a href="#projects" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Proyectos</a>
+        <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Acerca de</a>
+        <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Contacto</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER (Home) -->
+  <!-- Se añade un padding-top extra para compensar el navbar fijo -->
+  <header id="home" class="relative bg-cover bg-center pt-24"
+    style="background-image: url('./src/images/header-bg.jpg');">
+    <!-- Overlay degradado -->
     <div class="absolute inset-0 bg-black opacity-60"></div>
     <div class="relative container mx-auto text-center py-20 px-4 animate-fadeInDown">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">
@@ -39,10 +79,11 @@
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main class="container mx-auto my-10 px-4">
+  <!-- MAIN: Proyectos -->
+  <main id="projects" class="container mx-auto my-10 px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">Proyectos</h2>
+    <!-- Grid responsive: 1 columna en xs, 2 en md y 3 en lg -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
       <!-- Card 1: Task 5 -->
       <div
         class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
@@ -52,6 +93,14 @@
           <p class="flex-grow">
             Simple juego tipo breakout en Phaser basado en el Arkanoid.
           </p>
+          <!-- Tecnologías usadas -->
+          <div class="mt-2 flex space-x-2 items-center">
+            <!-- Uso un emoji para Phaser -->
+            <span class="text-2xl" title="Phaser">🎮</span>
+            <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+            <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+          </div>
+          <!-- Botones -->
           <div class="mt-4 space-x-2">
             <a href="https://davidhdezlemus.itch.io/freenoid-arkanoid-clone"
               class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
@@ -68,9 +117,16 @@
         <div class="p-4 flex flex-col flex-grow">
           <h5 class="text-xl font-semibold mb-2">Task 7</h5>
           <p class="flex-grow">
-            Una app para filtrar y mostrar gasolineras en España por provincia,
-            municipio, tipo de combustible y estado de apertura.
+            Una app para filtrar y mostrar gasolineras en España por provincia, municipio, tipo de combustible y estado
+            de apertura.
           </p>
+          <!-- Tecnologías usadas -->
+          <div class="mt-2 flex space-x-2 items-center">
+            <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+            <!-- Emoji representativo de API o conectividad -->
+            <span class="text-2xl" title="API">🔌</span>
+          </div>
+          <!-- Botones -->
           <div class="mt-4 space-x-2">
             <a href="https://davidhdezlemus.github.io/Tarea-7/"
               class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
@@ -88,7 +144,17 @@
           <h5 class="text-xl font-semibold mb-2">
             Proyecto - Cliente/Diseño
           </h5>
-          <p class="flex-grow">Reproductor de música estilo Spotify.</p>
+          <p class="flex-grow">
+            Reproductor de música estilo Spotify.
+          </p>
+          <!-- Tecnologías usadas -->
+          <div class="mt-2 flex space-x-2 items-center">
+            <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+            <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
+            <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+            <i class="devicon-react-original colored text-2xl" title="React"></i>
+          </div>
+          <!-- Botones -->
           <div class="mt-4 space-x-2">
             <a href="https://davidhdezlemus.github.io/Proyecto/"
               class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
@@ -105,6 +171,14 @@
         <div class="p-4 flex flex-col flex-grow">
           <h5 class="text-xl font-semibold mb-2">Web Emprendimiento</h5>
           <p class="flex-grow">Web de Emprendimiento en equipo.</p>
+          <!-- Tecnologías usadas -->
+          <div class="mt-2 flex space-x-2 items-center">
+            <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+            <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
+            <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+            <i class="devicon-tailwindcss-plain colored text-2xl" title="Tailwind CSS"></i>
+          </div>
+          <!-- Botones -->
           <div class="mt-4 space-x-2">
             <a href="https://emprendimiento-david.vercel.app"
               class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
@@ -116,12 +190,32 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="relative py-12">
+  <!-- SECCIÓN: Acerca de mí -->
+  <section id="about" class="py-12 bg-gray-800">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-6">Acerca de mí</h2>
+      <p class="mb-4 text-lg">
+        Soy David Hdez Lemus, un desarrollador web apasionado por crear soluciones digitales innovadoras y eficientes.
+        Con experiencia en desarrollo frontend y backend, me dedico a transformar ideas en experiencias web
+        excepcionales.
+      </p>
+      <p class="mb-4 text-lg">
+        Mi pasión por el código y el diseño se refleja en cada proyecto en el que trabajo. Siempre estoy en búsqueda de
+        nuevos desafíos y oportunidades para aprender y crecer en el mundo tecnológico.
+      </p>
+      <p class="text-lg">
+        En este portfolio encontrarás una selección de mis proyectos más destacados, que demuestran mi capacidad para
+        trabajar con diversas tecnologías y crear interfaces de usuario atractivas y funcionales.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER: Contacto -->
+  <footer id="contact" class="relative py-12">
     <div class="absolute inset-0 bg-black opacity-60"></div>
     <div class="relative container mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8">
-
+        <!-- Sección Company -->
         <div>
           <h5 class="uppercase text-lg font-semibold mb-2">Company</h5>
           <p>
@@ -129,7 +223,7 @@
             Desarrollo Web Profesional
           </p>
         </div>
-
+        <!-- Sección Contacto -->
         <div>
           <h5 class="uppercase text-lg font-semibold mb-2">Contacto</h5>
           <ul>
@@ -149,6 +243,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- Script para toggle del menú móvil -->
+  <script>
+    const navbarToggle = document.getElementById("navbar-toggle");
+    const navbarMenu = document.getElementById("navbar-menu");
+
+    navbarToggle.addEventListener("click", () => {
+      navbarMenu.classList.toggle("hidden");
+    });
+  </script>
 </body>
 
 </html>
