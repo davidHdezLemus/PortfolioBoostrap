@@ -5,126 +5,150 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio - David Hdez Lemus</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./src/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
 
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInDown {
+      animation: fadeInDown 1s ease-in-out;
+    }
   </style>
 </head>
 
-<body class="bg-dark text-light">
-  <header class="text-center">
-    <div class="container header-text">
-      <h1>Portfolio de David Hdez Lemus</h1>
-      <p>Descubre mis proyectos y mi pasión por el desarrollo web</p>
+<body class="bg-gray-900 text-white">
+  <!-- HEADER -->
+  <header class="relative bg-cover bg-center" style="background-image: url('./src/images/header-bg.jpg');">
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="relative container mx-auto text-center py-20 px-4 animate-fadeInDown">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Portfolio de David Hdez Lemus
+      </h1>
+      <p class="text-lg md:text-xl">
+        Descubre mis proyectos y mi pasión por el desarrollo web
+      </p>
     </div>
   </header>
 
-  <main class="container my-5">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  <!-- MAIN -->
+  <main class="container mx-auto my-10 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <div class="col">
-        <div class="card bg-secondary text-light h-100">
-          <img src="./src/images/task5.png" class="card-img-top img-fluid" alt="FreeNoid" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Task 5</h5>
-            <p class="card-text">
-              Simple juego tipo breakout en Phaser basado en el Arkanoid.
-            </p>
-            <div class="mt-auto">
-              <a href="https://davidhdezlemus.itch.io/freenoid-arkanoid-clone" class="btn btn-primary">Aplicación</a>
-              <a href="https://github.com/davidHdezLemus/Phaser_Vite_Template_FreeNoid"
-                class="btn btn-outline-light">Código</a>
-            </div>
+      <!-- Card 1: Task 5 -->
+      <div
+        class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
+        <img src="./src/images/task5.png" alt="FreeNoid" class="h-48 w-full object-cover" />
+        <div class="p-4 flex flex-col flex-grow">
+          <h5 class="text-xl font-semibold mb-2">Task 5</h5>
+          <p class="flex-grow">
+            Simple juego tipo breakout en Phaser basado en el Arkanoid.
+          </p>
+          <div class="mt-4 space-x-2">
+            <a href="https://davidhdezlemus.itch.io/freenoid-arkanoid-clone"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
+            <a href="https://github.com/davidHdezLemus/Phaser_Vite_Template_FreeNoid"
+              class="border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">Código</a>
           </div>
         </div>
       </div>
 
-      <div class="col">
-        <div class="card bg-secondary text-light h-100">
-          <img src="./src/images/task7.png" class="card-img-top img-fluid" alt="Task 7" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Task 7</h5>
-            <p class="card-text">
-              Una app para filtrar y mostrar gasolineras en España por provincia, municipio, tipo de combustible y
-              estado de apertura.
-            </p>
-            <div class="mt-auto">
-              <a href="https://davidhdezlemus.github.io/Tarea-7/" class="btn btn-primary">Aplicación</a>
-              <a href="https://github.com/davidHdezLemus/Tarea-7" class="btn btn-outline-light">Código</a>
-            </div>
+      <!-- Card 2: Task 7 -->
+      <div
+        class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
+        <img src="./src/images/task7.png" alt="Task 7" class="h-48 w-full object-cover" />
+        <div class="p-4 flex flex-col flex-grow">
+          <h5 class="text-xl font-semibold mb-2">Task 7</h5>
+          <p class="flex-grow">
+            Una app para filtrar y mostrar gasolineras en España por provincia,
+            municipio, tipo de combustible y estado de apertura.
+          </p>
+          <div class="mt-4 space-x-2">
+            <a href="https://davidhdezlemus.github.io/Tarea-7/"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
+            <a href="https://github.com/davidHdezLemus/Tarea-7"
+              class="border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">Código</a>
           </div>
         </div>
       </div>
 
-      <div class="col">
-        <div class="card bg-secondary text-light h-100">
-          <img src="./src/images/proyecto.png" class="card-img-top img-fluid" alt="Proyecto - Cliente/Diseño" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Proyecto - Cliente/Diseño</h5>
-            <p class="card-text">
-              Reproductor de música estilo Spotify.
-            </p>
-            <div class="mt-auto">
-              <a href="https://davidhdezlemus.github.io/Proyecto/" class="btn btn-primary">Aplicación</a>
-              <a href="https://github.com/davidHdezLemus/Proyecto" class="btn btn-outline-light">Código</a>
-            </div>
+      <!-- Card 3: Proyecto - Cliente/Diseño -->
+      <div
+        class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
+        <img src="./src/images/proyecto.png" alt="Proyecto - Cliente/Diseño" class="h-48 w-full object-cover" />
+        <div class="p-4 flex flex-col flex-grow">
+          <h5 class="text-xl font-semibold mb-2">
+            Proyecto - Cliente/Diseño
+          </h5>
+          <p class="flex-grow">Reproductor de música estilo Spotify.</p>
+          <div class="mt-4 space-x-2">
+            <a href="https://davidhdezlemus.github.io/Proyecto/"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
+            <a href="https://github.com/davidHdezLemus/Proyecto"
+              class="border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">Código</a>
           </div>
         </div>
       </div>
 
-      <div class="col">
-        <div class="card bg-secondary text-light h-100">
-          <img src="./src/images/emprendimiento.png" class="card-img-top img-fluid" alt="Forms - Cliente" />
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Web Emprendimiento</h5>
-            <p class="card-text">
-              Web de Emprendimiento en equipo.
-            </p>
-            <div class="mt-auto">
-              <a href="https://emprendimiento-david.vercel.app" class="btn btn-primary">Aplicación</a>
-              <a href="https://github.com/davidHdezLemus/Emprendimiento---David"
-                class="btn btn-outline-light">Código</a>
-            </div>
+      <!-- Card 4: Web Emprendimiento -->
+      <div
+        class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
+        <img src="./src/images/emprendimiento.png" alt="Web Emprendimiento" class="h-48 w-full object-cover" />
+        <div class="p-4 flex flex-col flex-grow">
+          <h5 class="text-xl font-semibold mb-2">Web Emprendimiento</h5>
+          <p class="flex-grow">Web de Emprendimiento en equipo.</p>
+          <div class="mt-4 space-x-2">
+            <a href="https://emprendimiento-david.vercel.app"
+              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
+            <a href="https://github.com/davidHdezLemus/Emprendimiento---David"
+              class="border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">Código</a>
           </div>
         </div>
       </div>
     </div>
-
   </main>
 
-  <footer class="py-5">
-    <div class="container">
-      <div class="row">
+  <!-- FOOTER -->
+  <footer class="relative py-12">
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="relative container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
 
-        <div class="col-md-6 mb-4 mb-md-0">
-          <h5>Company</h5>
-          <p class="mb-0">
+        <div>
+          <h5 class="uppercase text-lg font-semibold mb-2">Company</h5>
+          <p>
             David Hdez Lemus<br />
             Desarrollo Web Profesional
           </p>
         </div>
 
-        <div class="col-md-6">
-          <h5>Contacto</h5>
-          <ul class="list-unstyled">
+        <div>
+          <h5 class="uppercase text-lg font-semibold mb-2">Contacto</h5>
+          <ul>
             <li>
               Email:
-              <a href="mailto:drhernandezl01@iesalbarregas.es" class="text-light">drhernandezl01@iesalbarregas.es</a>
+              <a href="mailto:drhernandezl01@iesalbarregas.es"
+                class="text-blue-300 hover:underline">drhernandezl01@iesalbarregas.es</a>
             </li>
             <li>Tel: +34 630 xxx xxx</li>
             <li>Dirección: Calle Marga.. 1b, Mérida, España</li>
           </ul>
         </div>
       </div>
-      <hr class="bg-light" />
+      <hr class="border-t border-gray-400 my-4" />
       <div class="text-center">
-        <p class="mb-0">&copy; 2024 David Hdez Lemus. Todos los derechos reservados.</p>
+        <p>&copy; 2024 David Hdez Lemus. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
