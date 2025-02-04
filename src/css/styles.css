@@ -1,0 +1,72 @@
+/* HEADER */
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)),
+    url('./src/images/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 0;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.25rem;
+}
+
+/* Grid */
+.card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)),
+    url('./src/images/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+
+footer h5 {
+  text-transform: uppercase;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+/* Animation */
+.header-text {
+  animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
