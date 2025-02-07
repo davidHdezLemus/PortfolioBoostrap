@@ -8,7 +8,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Hoja de estilos externa -->
   <link rel="stylesheet" href="./src/css/styles.css">
   <script src="./src/js/script.js" defer></script>
 </head>
@@ -49,21 +48,25 @@
   </nav>
 
   <!-- HEADER -->
-  <header id="home" class="relative bg-cover bg-center pt-24"
-    style="background-image: url('./src/images/header-bg.webp');">
+  <header id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+    <video autoplay muted loop class="absolute w-full h-full object-cover">
+      <source src="https://cdn.pixabay.com/video/2023/08/31/178501-860033423_large.mp4" type="video/mp4">
+    </video>
     <div class="absolute inset-0 bg-black opacity-60"></div>
-    <div class="relative container mx-auto text-center py-20 px-4 animate-fadeInDown">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">David Hernández Lemus</h1>
-      <p class="text-lg md:text-xl">Descubre mis proyectos y mi pasión por el desarrollo web</p>
+    <div class="relative text-center px-4 animate-fadeInDown">
+      <h1 id="typewriter" class="text-4xl md:text-5xl font-bold mb-4 text-white"></h1>
+      <p class="text-lg md:text-xl text-white">Descubre mis proyectos y mi pasión por el desarrollo web
+      </p>
     </div>
   </header>
 
   <!-- MAIN: Proyectos -->
-  <main id="projects" class="container mx-auto my-10 px-4">
-    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-6
-           bg-gradient-to-r from-indigo-500 to-purple-500
-           bg-clip-text text-transparent
-           drop-shadow-lg border-b-2 border-indigo-500 pb-2">Proyectos</h2>
+  <span id="projects"></span>
+  <main class="container mx-auto my-10 px-4" style="margin-bottom: 6.5rem;">
+    <h2 class="mt-20 text-4xl md:text-5xl font-extrabold text-center mb-10
+    bg-gradient-to-r from-indigo-500 to-purple-500
+    bg-clip-text text-transparent
+    drop-shadow-lg border-b-2 border-indigo-500 pb-2">Proyectos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Tarjeta: Arkanoid -->
       <div class="flip-card h-72">
@@ -76,11 +79,6 @@
             </div>
             <div class="p-4">
               <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Arkanoid</h5>
-              <div class="mt-2 flex justify-center space-x-2 items-center">
-                <span class="text-2xl" title="Phaser">🎮</span>
-                <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
-                <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
-              </div>
             </div>
           </div>
           <!-- Reverso -->
@@ -88,7 +86,7 @@
             class="flip-card-back flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
             <div class="p-4 flex flex-col justify-center h-full">
               <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Arkanoid</h5>
-              <p class="mb-4 text-center">
+              <p class="mb-4 text-center line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
                 Simple juego tipo breakout en Phaser basado en el Arkanoid. ¡Descubre todos los detalles y juega online!
               </p>
               <div class="grid grid-cols-2 gap-2">
@@ -100,6 +98,11 @@
                   class="flex justify-center items-center border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">
                   Código
                 </a>
+                <div class="col-span-2 flex justify-center items-center mt-2 space-x-2">
+                  <span class="text-2xl" title="Phaser">🎮</span>
+                  <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+                  <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -118,11 +121,6 @@
             </div>
             <div class="p-4">
               <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Gasolineras Españolas</h5>
-              <div class="mt-2 flex justify-center space-x-2 items-center">
-                <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
-                <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
-                <span class="text-2xl" title="API">🔌</span>
-              </div>
             </div>
           </div>
           <!-- Reverso -->
@@ -130,7 +128,7 @@
             class="flip-card-back flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
             <div class="p-4 flex flex-col justify-center h-full">
               <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Gasolineras Españolas</h5>
-              <p class="mb-4 text-center">
+              <p class="mb-4 text-center line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
                 Una app para filtrar y mostrar gasolineras en España por provincia, municipio, tipo de combustible y
                 estado de apertura.
               </p>
@@ -143,6 +141,11 @@
                   class="flex justify-center items-center border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">
                   Código
                 </a>
+                <div class="col-span-2 flex justify-center items-center mt-2 space-x-2">
+                  <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+                  <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+                  <span class="text-2xl" title="API">🔌</span>
+                </div>
               </div>
             </div>
           </div>
@@ -160,12 +163,6 @@
             </div>
             <div class="p-4">
               <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Spotify</h5>
-              <div class="mt-2 flex justify-center space-x-2 items-center">
-                <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
-                <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
-                <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
-                <span class="text-2xl" title="API">🔌</span>
-              </div>
             </div>
           </div>
           <!-- Reverso -->
@@ -173,7 +170,7 @@
             class="flip-card-back flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
             <div class="p-4 flex flex-col justify-center h-full">
               <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Spotify</h5>
-              <p class="mb-4 text-center">
+              <p class="mb-4 text-center line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
                 Reproductor de música estilo Spotify. Interfaz inspirada en Spotify con funcionalidades limitadas.
               </p>
               <div class="grid grid-cols-2 gap-2">
@@ -185,6 +182,12 @@
                   class="flex justify-center items-center border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">
                   Código
                 </a>
+                <div class="col-span-2 flex justify-center items-center mt-2 space-x-2">
+                  <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+                  <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
+                  <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+                  <span class="text-2xl" title="API">🔌</span>
+                </div>
               </div>
             </div>
           </div>
@@ -203,12 +206,6 @@
             </div>
             <div class="p-4">
               <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Web Emprendimiento</h5>
-              <div class="mt-2 flex justify-center space-x-2 items-center">
-                <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
-                <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
-                <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
-                <i class="devicon-tailwindcss-plain colored text-2xl" title="Tailwind CSS"></i>
-              </div>
             </div>
           </div>
           <!-- Reverso -->
@@ -216,7 +213,7 @@
             class="flip-card-back flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
             <div class="p-4 flex flex-col justify-center h-full">
               <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Web Emprendimiento</h5>
-              <p class="mb-4 text-center">
+              <p class="mb-4 text-center line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
                 Web de Emprendimiento en equipo, clon de un sitio de emprendimiento con diseño moderno y responsivo.
               </p>
               <div class="grid grid-cols-2 gap-2">
@@ -228,40 +225,52 @@
                   class="flex justify-center items-center border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">
                   Código
                 </a>
+                <div class="col-span-2 flex justify-center items-center mt-2 space-x-2">
+                  <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+                  <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
+                  <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+                  <i class="devicon-tailwindcss-plain colored text-2xl" title="Tailwind CSS"></i>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </main>
 
   <!-- SECCIÓN: Acerca de mí -->
-  <section id="about" class="py-12 bg-gray-800">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-6
+  <section id="about" class="h-screen bg-gray-800">
+    <div class="container mx-auto px-4 h-full flex flex-col">
+      <h2 class="mt-20 text-4xl md:text-5xl font-extrabold text-center mb-10
            bg-gradient-to-r from-indigo-500 to-purple-500
            bg-clip-text text-transparent
-           drop-shadow-lg border-b-2 border-indigo-500 pb-2">Acerca de mí</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+           drop-shadow-lg border-b-2 border-indigo-500 pb-2">
+        Acerca de mí
+      </h2>
+      <div
+        class="flex flex-col md:flex-row items-center justify-center text-center md:text-left space-y-8 md:space-y-0 md:space-x-12 flex-1">
         <div class="flex justify-center">
           <img src="./src/images/yo.webp" alt="Foto de David Hdez Lemus" class="rounded-full w-64 h-64 object-cover">
         </div>
-        <div class="text-lg text-center">
-          <p class="mb-4">
+        <div class="max-w-2xl">
+          <p class="mb-4 text-center line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
             Soy David Hdez Lemus, un desarrollador web apasionado por crear soluciones digitales innovadoras y
             eficientes. Con experiencia en desarrollo frontend y backend, me dedico a transformar ideas en experiencias
             web excepcionales.
           </p>
-          <p class="mb-4">
+          <p class="mb-4 text-center line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
             Mi pasión por el código y el diseño se refleja en cada proyecto en el que trabajo. Siempre estoy en búsqueda
             de nuevos desafíos y oportunidades para aprender y crecer en el mundo tecnológico.
           </p>
-          <p>
+          <p class="mb-4 text-center line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
             En este portfolio encontrarás una selección de mis proyectos más destacados, que demuestran mi capacidad
-            para
-            trabajar con diversas tecnologías y crear interfaces de usuario atractivas y funcionales.
+            para trabajar con diversas tecnologías y crear interfaces de usuario atractivas y funcionales.
+          </p>
+          <p class="text-center line-clamp-2 sm:line-clamp-3 lg:line-clamp-none">
+            Con cada proyecto, busco no solo resolver problemas, sino también generar un impacto positivo y duradero en
+            el entorno digital. Mi compromiso es seguir aprendiendo y adaptándome a un mundo en constante evolución,
+            creando soluciones que inspiran y conectan a las personas.
           </p>
         </div>
       </div>
@@ -352,7 +361,7 @@
         </a>
       </div>
       <div class="text-center">
-        <p>&copy; 2024 David Hdez Lemus. Todos los derechos reservados.</p>
+        <p>&copy; 2025 David R. Hdez Lemus. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
