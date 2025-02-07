@@ -5,45 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio - David Hdez Lemus</title>
-  <!-- Cargar Tailwind CSS desde CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Cargar Devicon para los íconos de tecnologías -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
-  <style>
-    /* Animación personalizada para el header */
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .animate-fadeInDown {
-      animation: fadeInDown 1s ease-in-out;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos externa -->
+  <link rel="stylesheet" href="./src/css/styles.css">
+  <script src="./src/js/script.js" defer></script>
 </head>
 
 <body class="bg-gray-900 text-white">
-  <!-- NAVBAR FIJO -->
+  <!-- NAV -->
   <nav class="bg-gray-800 fixed top-0 w-full z-50">
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center py-4">
-        <!-- Marca / Logo -->
-        <a href="#home" class="text-white text-xl font-bold">Portfolio</a>
-        <!-- Menú escritorio -->
+        <!-- Logo en vez de texto "Portfolio" -->
+        <a href="#home" class="flex items-center">
+          <img src="./src/images/logo.webp" alt="Logo de David Hdez Lemus" class="h-10">
+        </a>
         <div class="hidden md:flex space-x-6">
           <a href="#home" class="text-gray-300 hover:text-white">Home</a>
           <a href="#projects" class="text-gray-300 hover:text-white">Proyectos</a>
           <a href="#about" class="text-gray-300 hover:text-white">Acerca de</a>
+          <a href="#skills" class="text-gray-300 hover:text-white">Habilidades</a>
           <a href="#contact" class="text-gray-300 hover:text-white">Contacto</a>
         </div>
-        <!-- Botón menú móvil -->
         <div class="md:hidden">
           <button id="navbar-toggle" class="text-gray-300 focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -53,206 +38,324 @@
           </button>
         </div>
       </div>
-      <!-- Menú móvil -->
       <div id="navbar-menu" class="hidden md:hidden">
         <a href="#home" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Home</a>
         <a href="#projects" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Proyectos</a>
         <a href="#about" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Acerca de</a>
+        <a href="#skills" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Habilidades</a>
         <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Contacto</a>
       </div>
     </div>
   </nav>
 
-  <!-- HEADER (Home) -->
-  <!-- Se añade un padding-top extra para compensar el navbar fijo -->
+  <!-- HEADER -->
   <header id="home" class="relative bg-cover bg-center pt-24"
-    style="background-image: url('./src/images/header-bg.jpg');">
-    <!-- Overlay degradado -->
+    style="background-image: url('./src/images/header-bg.webp');">
     <div class="absolute inset-0 bg-black opacity-60"></div>
     <div class="relative container mx-auto text-center py-20 px-4 animate-fadeInDown">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">
-        Portfolio de David Hdez Lemus
-      </h1>
-      <p class="text-lg md:text-xl">
-        Descubre mis proyectos y mi pasión por el desarrollo web
-      </p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">David Hernández Lemus</h1>
+      <p class="text-lg md:text-xl">Descubre mis proyectos y mi pasión por el desarrollo web</p>
     </div>
   </header>
 
   <!-- MAIN: Proyectos -->
   <main id="projects" class="container mx-auto my-10 px-4">
-    <h2 class="text-3xl font-bold text-center mb-8">Proyectos</h2>
-    <!-- Grid responsive: 1 columna en xs, 2 en md y 3 en lg -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Card 1: Task 5 -->
-      <div
-        class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
-        <img src="./src/images/task5.png" alt="FreeNoid" class="h-48 w-full object-cover" />
-        <div class="p-4 flex flex-col flex-grow">
-          <h5 class="text-xl font-semibold mb-2">Task 5</h5>
-          <p class="flex-grow">
-            Simple juego tipo breakout en Phaser basado en el Arkanoid.
-          </p>
-          <!-- Tecnologías usadas -->
-          <div class="mt-2 flex space-x-2 items-center">
-            <!-- Uso un emoji para Phaser -->
-            <span class="text-2xl" title="Phaser">🎮</span>
-            <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
-            <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-6
+           bg-gradient-to-r from-indigo-500 to-purple-500
+           bg-clip-text text-transparent
+           drop-shadow-lg border-b-2 border-indigo-500 pb-2">Proyectos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Tarjeta: Arkanoid -->
+      <div class="flip-card h-72">
+        <div class="flip-card-inner">
+          <!-- Frente -->
+          <div
+            class="flip-card-front flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
+            <div class="w-full h-48 flex items-center justify-center p-2">
+              <img src="./src/images/arkanoid.webp" alt="Arkanoid" class="max-w-full max-h-full object-contain">
+            </div>
+            <div class="p-4">
+              <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Arkanoid</h5>
+              <div class="mt-2 flex justify-center space-x-2 items-center">
+                <span class="text-2xl" title="Phaser">🎮</span>
+                <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+                <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+              </div>
+            </div>
           </div>
-          <!-- Botones -->
-          <div class="mt-4 space-x-2">
-            <a href="https://davidhdezlemus.itch.io/freenoid-arkanoid-clone"
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
-            <a href="https://github.com/davidHdezLemus/Phaser_Vite_Template_FreeNoid"
-              class="border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">Código</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: Task 7 -->
-      <div
-        class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
-        <img src="./src/images/task7.png" alt="Task 7" class="h-48 w-full object-cover" />
-        <div class="p-4 flex flex-col flex-grow">
-          <h5 class="text-xl font-semibold mb-2">Task 7</h5>
-          <p class="flex-grow">
-            Una app para filtrar y mostrar gasolineras en España por provincia, municipio, tipo de combustible y estado
-            de apertura.
-          </p>
-          <!-- Tecnologías usadas -->
-          <div class="mt-2 flex space-x-2 items-center">
-            <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
-            <!-- Emoji representativo de API o conectividad -->
-            <span class="text-2xl" title="API">🔌</span>
-          </div>
-          <!-- Botones -->
-          <div class="mt-4 space-x-2">
-            <a href="https://davidhdezlemus.github.io/Tarea-7/"
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
-            <a href="https://github.com/davidHdezLemus/Tarea-7"
-              class="border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">Código</a>
+          <!-- Reverso -->
+          <div
+            class="flip-card-back flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
+            <div class="p-4 flex flex-col justify-center h-full">
+              <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Arkanoid</h5>
+              <p class="mb-4 text-center">
+                Simple juego tipo breakout en Phaser basado en el Arkanoid. ¡Descubre todos los detalles y juega online!
+              </p>
+              <div class="grid grid-cols-2 gap-2">
+                <a href="https://davidhdezlemus.itch.io/freenoid-arkanoid-clone"
+                  class="flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                  Aplicación
+                </a>
+                <a href="https://github.com/davidHdezLemus/Phaser_Vite_Template_FreeNoid"
+                  class="flex justify-center items-center border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">
+                  Código
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Card 3: Proyecto - Cliente/Diseño -->
-      <div
-        class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
-        <img src="./src/images/proyecto.png" alt="Proyecto - Cliente/Diseño" class="h-48 w-full object-cover" />
-        <div class="p-4 flex flex-col flex-grow">
-          <h5 class="text-xl font-semibold mb-2">
-            Proyecto - Cliente/Diseño
-          </h5>
-          <p class="flex-grow">
-            Reproductor de música estilo Spotify.
-          </p>
-          <!-- Tecnologías usadas -->
-          <div class="mt-2 flex space-x-2 items-center">
-            <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
-            <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
-            <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
-            <i class="devicon-react-original colored text-2xl" title="React"></i>
+      <!-- Tarjeta: Gasolineras Españolas -->
+      <div class="flip-card h-72">
+        <div class="flip-card-inner">
+          <!-- Frente -->
+          <div
+            class="flip-card-front flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
+            <div class="w-full h-48 flex items-center justify-center p-2">
+              <img src="./src/images/gasStation.webp" alt="Gasolineras Españolas"
+                class="max-w-full max-h-full object-contain">
+            </div>
+            <div class="p-4">
+              <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Gasolineras Españolas</h5>
+              <div class="mt-2 flex justify-center space-x-2 items-center">
+                <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+                <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+                <span class="text-2xl" title="API">🔌</span>
+              </div>
+            </div>
           </div>
-          <!-- Botones -->
-          <div class="mt-4 space-x-2">
-            <a href="https://davidhdezlemus.github.io/Proyecto/"
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
-            <a href="https://github.com/davidHdezLemus/Proyecto"
-              class="border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">Código</a>
+          <!-- Reverso -->
+          <div
+            class="flip-card-back flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
+            <div class="p-4 flex flex-col justify-center h-full">
+              <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Gasolineras Españolas</h5>
+              <p class="mb-4 text-center">
+                Una app para filtrar y mostrar gasolineras en España por provincia, municipio, tipo de combustible y
+                estado de apertura.
+              </p>
+              <div class="grid grid-cols-2 gap-2">
+                <a href="https://davidhdezlemus.github.io/Tarea-7/"
+                  class="flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                  Aplicación
+                </a>
+                <a href="https://github.com/davidHdezLemus/Tarea-7"
+                  class="flex justify-center items-center border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">
+                  Código
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Card 4: Web Emprendimiento -->
-      <div
-        class="flex flex-col bg-gray-800 rounded overflow-hidden shadow-md hover:shadow-lg transform hover:-translate-y-1 transition duration-300">
-        <img src="./src/images/emprendimiento.png" alt="Web Emprendimiento" class="h-48 w-full object-cover" />
-        <div class="p-4 flex flex-col flex-grow">
-          <h5 class="text-xl font-semibold mb-2">Web Emprendimiento</h5>
-          <p class="flex-grow">Web de Emprendimiento en equipo.</p>
-          <!-- Tecnologías usadas -->
-          <div class="mt-2 flex space-x-2 items-center">
-            <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
-            <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
-            <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
-            <i class="devicon-tailwindcss-plain colored text-2xl" title="Tailwind CSS"></i>
+      <!-- Tarjeta: Spotify -->
+      <div class="flip-card h-72">
+        <div class="flip-card-inner">
+          <!-- Frente -->
+          <div
+            class="flip-card-front flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
+            <div class="w-full h-48 flex items-center justify-center p-2">
+              <img src="./src/images/spotify.webp" alt="Spotify" class="max-w-full max-h-full object-contain">
+            </div>
+            <div class="p-4">
+              <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Spotify</h5>
+              <div class="mt-2 flex justify-center space-x-2 items-center">
+                <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+                <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
+                <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+                <span class="text-2xl" title="API">🔌</span>
+              </div>
+            </div>
           </div>
-          <!-- Botones -->
-          <div class="mt-4 space-x-2">
-            <a href="https://emprendimiento-david.vercel.app"
-              class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Aplicación</a>
-            <a href="https://github.com/davidHdezLemus/Emprendimiento---David"
-              class="border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">Código</a>
+          <!-- Reverso -->
+          <div
+            class="flip-card-back flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
+            <div class="p-4 flex flex-col justify-center h-full">
+              <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Spotify</h5>
+              <p class="mb-4 text-center">
+                Reproductor de música estilo Spotify. Interfaz inspirada en Spotify con funcionalidades limitadas.
+              </p>
+              <div class="grid grid-cols-2 gap-2">
+                <a href="https://davidhdezlemus.github.io/Proyecto/"
+                  class="flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                  Aplicación
+                </a>
+                <a href="https://github.com/davidHdezLemus/Proyecto"
+                  class="flex justify-center items-center border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">
+                  Código
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Tarjeta: Web Emprendimiento -->
+      <div class="flip-card h-72">
+        <div class="flip-card-inner">
+          <!-- Frente -->
+          <div
+            class="flip-card-front flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
+            <div class="w-full h-48 flex items-center justify-center p-2">
+              <img src="./src/images/emprendimiento.webp" alt="Web Emprendimiento"
+                class="max-w-full max-h-full object-contain">
+            </div>
+            <div class="p-4">
+              <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Web Emprendimiento</h5>
+              <div class="mt-2 flex justify-center space-x-2 items-center">
+                <i class="devicon-html5-plain colored text-2xl" title="HTML5"></i>
+                <i class="devicon-css3-plain colored text-2xl" title="CSS3"></i>
+                <i class="devicon-javascript-plain colored text-2xl" title="JavaScript"></i>
+                <i class="devicon-tailwindcss-plain colored text-2xl" title="Tailwind CSS"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Reverso -->
+          <div
+            class="flip-card-back flex flex-col bg-gray-800 rounded overflow-hidden shadow-xl transition duration-300">
+            <div class="p-4 flex flex-col justify-center h-full">
+              <h5 class="text-xl font-semibold mb-2 text-center title-shadow">Web Emprendimiento</h5>
+              <p class="mb-4 text-center">
+                Web de Emprendimiento en equipo, clon de un sitio de emprendimiento con diseño moderno y responsivo.
+              </p>
+              <div class="grid grid-cols-2 gap-2">
+                <a href="https://emprendimiento-david.vercel.app"
+                  class="flex justify-center items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+                  Aplicación
+                </a>
+                <a href="https://github.com/davidHdezLemus/Emprendimiento---David"
+                  class="flex justify-center items-center border border-white text-white hover:bg-white hover:text-gray-800 font-semibold py-2 px-4 rounded">
+                  Código
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>
 
   <!-- SECCIÓN: Acerca de mí -->
   <section id="about" class="py-12 bg-gray-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-6">Acerca de mí</h2>
-      <p class="mb-4 text-lg">
-        Soy David Hdez Lemus, un desarrollador web apasionado por crear soluciones digitales innovadoras y eficientes.
-        Con experiencia en desarrollo frontend y backend, me dedico a transformar ideas en experiencias web
-        excepcionales.
-      </p>
-      <p class="mb-4 text-lg">
-        Mi pasión por el código y el diseño se refleja en cada proyecto en el que trabajo. Siempre estoy en búsqueda de
-        nuevos desafíos y oportunidades para aprender y crecer en el mundo tecnológico.
-      </p>
-      <p class="text-lg">
-        En este portfolio encontrarás una selección de mis proyectos más destacados, que demuestran mi capacidad para
-        trabajar con diversas tecnologías y crear interfaces de usuario atractivas y funcionales.
-      </p>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-6
+           bg-gradient-to-r from-indigo-500 to-purple-500
+           bg-clip-text text-transparent
+           drop-shadow-lg border-b-2 border-indigo-500 pb-2">Acerca de mí</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="flex justify-center">
+          <img src="./src/images/yo.webp" alt="Foto de David Hdez Lemus" class="rounded-full w-64 h-64 object-cover">
+        </div>
+        <div class="text-lg text-center">
+          <p class="mb-4">
+            Soy David Hdez Lemus, un desarrollador web apasionado por crear soluciones digitales innovadoras y
+            eficientes. Con experiencia en desarrollo frontend y backend, me dedico a transformar ideas en experiencias
+            web excepcionales.
+          </p>
+          <p class="mb-4">
+            Mi pasión por el código y el diseño se refleja en cada proyecto en el que trabajo. Siempre estoy en búsqueda
+            de nuevos desafíos y oportunidades para aprender y crecer en el mundo tecnológico.
+          </p>
+          <p>
+            En este portfolio encontrarás una selección de mis proyectos más destacados, que demuestran mi capacidad
+            para
+            trabajar con diversas tecnologías y crear interfaces de usuario atractivas y funcionales.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER: Contacto -->
-  <footer id="contact" class="relative py-12">
-    <div class="absolute inset-0 bg-black opacity-60"></div>
-    <div class="relative container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- Sección Company -->
-        <div>
-          <h5 class="uppercase text-lg font-semibold mb-2">Company</h5>
-          <p>
-            David Hdez Lemus<br />
-            Desarrollo Web Profesional
-          </p>
+  <!-- SECCIÓN: Habilidades -->
+  <section id="skills" class="py-12 bg-gray-900">
+    <div class="container mx-auto px-4 skills-container">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-6
+           bg-gradient-to-r from-indigo-500 to-purple-500
+           bg-clip-text text-transparent
+           drop-shadow-lg border-b-2 border-indigo-500 pb-2">Habilidades</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-4 bg-gray-800 rounded shadow-xl">
+          <h3 class="text-xl font-bold mb-2">Desarrollo</h3>
+          <div>
+            <h4 class="font-semibold">Tecnologías</h4>
+            <ul class="list-disc ml-4">
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>npm</li>
+              <li>Git</li>
+            </ul>
+          </div>
+          <div class="mt-4">
+            <h4 class="font-semibold">Herramientas</h4>
+            <ul class="list-disc ml-4">
+              <li>VSCode</li>
+            </ul>
+          </div>
         </div>
-        <!-- Sección Contacto -->
-        <div>
-          <h5 class="uppercase text-lg font-semibold mb-2">Contacto</h5>
-          <ul>
-            <li>
-              Email:
-              <a href="mailto:drhernandezl01@iesalbarregas.es"
-                class="text-blue-300 hover:underline">drhernandezl01@iesalbarregas.es</a>
-            </li>
-            <li>Tel: +34 630 xxx xxx</li>
-            <li>Dirección: Calle Marga.. 1b, Mérida, España</li>
-          </ul>
+        <div class="p-4 bg-gray-800 rounded shadow-xl">
+          <h3 class="text-xl font-bold mb-2">Maquetación web</h3>
+          <div>
+            <h4 class="font-semibold">Tecnologías</h4>
+            <ul class="list-disc ml-4">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>CSS Grid</li>
+              <li>Flexbox</li>
+              <li>Bootstrap</li>
+              <li>Tailwind</li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-4 bg-gray-800 rounded shadow-xl">
+          <h3 class="text-xl font-bold mb-2">Trabajo en equipo</h3>
+          <div>
+            <h4 class="font-semibold">Organización</h4>
+            <ul class="list-disc ml-4">
+              <li>Github</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <hr class="border-t border-gray-400 my-4" />
+    </div>
+  </section>
+
+  <!-- FOOTER: Redes Sociales -->
+  <footer id="contact" class="relative py-12">
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="relative container mx-auto px-4 text-center">
+      <div class="flex justify-center items-center space-x-6 my-6">
+        <a href="https://twitter.com/tu_usuario" target="_blank" class="hover:text-blue-400 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M23.954 4.569c-.885.392-1.83.656-2.825.775 1.014-.608 1.794-1.574 2.163-2.723-.949.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-2.723 0-4.928 2.204-4.928 4.928 0 .386.045.762.127 1.124-4.094-.205-7.725-2.165-10.152-5.144-.424.729-.666 1.574-.666 2.476 0 1.708.87 3.213 2.188 4.096-.807-.026-1.566-.247-2.229-.616v.061c0 2.385 1.697 4.374 3.946 4.827-.413.112-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.6 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.395 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 14-7.496 14-13.986 0-.21 0-.423-.015-.634.962-.695 1.8-1.562 2.46-2.549z" />
+          </svg>
+        </a>
+        <a href="https://github.com/davidHdezLemus" target="_blank" class="hover:text-gray-400 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.089-.745.083-.73.083-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.835 2.809 1.305 3.495.998.108-.776.418-1.305.762-1.605-2.665-.305-5.467-1.332-5.467-5.931 0-1.31.47-2.381 1.235-3.221-.123-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.296-1.23 3.296-1.23.653 1.653.242 2.874.119 3.176.77.84 1.233 1.911 1.233 3.221 0 4.61-2.807 5.623-5.479 5.921.43.37.823 1.102.823 2.222 0 1.606-.015 2.903-.015 3.293 0 .321.218.694.825.576C20.565 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+          </svg>
+        </a>
+        <a href="https://linkedin.com/in/tu_usuario" target="_blank" class="hover:text-blue-700 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M19 0h-14c-2.762 0-5 2.238-5 5v14c0 2.762 2.238 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.762-2.238-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.29c-.966 0-1.75-.79-1.75-1.71s.784-1.71 1.75-1.71 1.75.79 1.75 1.71-.784 1.71-1.75 1.71zm13.5 10.29h-3v-4.5c0-1.08-.021-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.38v4.59h-3v-9h2.881v1.23h.041c.402-.76 1.38-1.56 2.841-1.56 3.041 0 3.604 2 3.604 4.59v4.74z" />
+          </svg>
+        </a>
+        <a href="mailto:drhernandezl01@iesalbarregas.es" target="_blank" class="hover:text-red-400 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.1-.897-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+          </svg>
+        </a>
+      </div>
       <div class="text-center">
         <p>&copy; 2024 David Hdez Lemus. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
-
-  <!-- Script para toggle del menú móvil -->
-  <script>
-    const navbarToggle = document.getElementById("navbar-toggle");
-    const navbarMenu = document.getElementById("navbar-menu");
-
-    navbarToggle.addEventListener("click", () => {
-      navbarMenu.classList.toggle("hidden");
-    });
-  </script>
 </body>
 
 </html>
