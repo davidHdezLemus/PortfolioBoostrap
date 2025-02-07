@@ -18,7 +18,6 @@ body {
   animation: fadeInDown 1s ease-in-out;
 }
 
-/* Estilos para la tarjeta flip */
 .flip-card {
   perspective: 1000px;
 }
@@ -50,17 +49,14 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Sombra en los títulos */
 .title-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Estado inicial: el contenedor de habilidades es invisible */
 .skills-container {
   opacity: 0;
 }
 
-/* Animación: fadeInUp (desliza hacia arriba y aparece) */
 @keyframes fadeInUp {
   0% {
     transform: translateY(50px);
@@ -73,7 +69,6 @@ body {
   }
 }
 
-/* Clase que activa la animación */
 .animate-skills {
   animation: fadeInUp 0.8s ease-out 300ms forwards;
 }
